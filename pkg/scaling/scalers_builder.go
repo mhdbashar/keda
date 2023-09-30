@@ -149,6 +149,8 @@ func buildScaler(ctx context.Context, client client.Client, triggerType string, 
 		return scalers.NewCronScaler(config)
 	case "datadog":
 		return scalers.NewDatadogScaler(ctx, config)
+	case "dtw":
+		return scalers.NewDtwScaler(config)
 	case "elasticsearch":
 		return scalers.NewElasticsearchScaler(config)
 	case "etcd":
@@ -200,6 +202,8 @@ func buildScaler(ctx context.Context, client client.Client, triggerType string, 
 		return scalers.NewNATSJetStreamScaler(config)
 	case "new-relic":
 		return scalers.NewNewRelicScaler(config)
+	case "open-prediction":
+		return scalers.NewopenPredictionScaler(ctx, config)
 	case "openstack-metric":
 		return scalers.NewOpenstackMetricScaler(ctx, config)
 	case "openstack-swift":
